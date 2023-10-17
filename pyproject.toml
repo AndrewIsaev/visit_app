@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "visit-app"
+version = "0.1.0"
+description = ""
+authors = ["Andrey Isaev <an.isaev7@gmail.com>"]
+readme = "README.md"
+packages = [{include = "visit_app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+djangorestframework = "^3.14.0"
+psycopg2-binary = "^2.9.9"
+django-environ = "^0.11.2"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+isort = "^5.12.0"
+pre-commit = "^3.5.0"
+flake8 = "^6.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.flake8]
+max-line-length = '120'
+per-file-ignores = [
+    '__init__.py:F401'
+]
+count = true
+ignore = []
+
+[tool.isort]
+line_length = 120
+known_first_party = ["src"]
+default_section = "THIRDPARTY"
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+multi_line_output = 3
+profile = "black"
